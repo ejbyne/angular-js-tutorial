@@ -1,5 +1,7 @@
 'use strict';
 
+/* global app:true */
+/* exported app */
 /**
  * @ngdoc overview
  * @name angNewsApp
@@ -8,7 +10,7 @@
  *
  * Main module of the application.
  */
-angular
+var app = angular
   .module('angNewsApp', [
     'ngAnimate',
     'ngCookies',
@@ -20,14 +22,7 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
+        templateUrl: 'views/posts.html',
+        controller: 'PostsCtrl'
       });
   });
